@@ -1,0 +1,84 @@
+Rubens Herculano 3003698
+Fabiana Lie Akamine 3003639
+
+
+1) Configurar o usuario e senha do GIT em sua máquina;
+	
+	git config --global user.email "<seu email>"
+	git config --global user.name "<seu nome>"
+
+2) Adicionar uma chave SSH ao seu perfil e sincronizá-la com sua máquina;
+	
+	ssh-keygen -t ed25519 -C "<seu email>"
+	Pressione enter.
+	Pressione enter.
+	Pressione enter.
+	
+	eval $(ssh-agent -s)
+	ssh-add ~/.ssh/id_ed25519
+	clip < ~/.ssh/id_ed25519.pub
+
+		No seu github vai em settings
+		SSH and GPG keys
+		New SSH Key
+		Coloquei um titulo
+		E coloque no campo key, aquilo que copiado no clip e depois adiciona.
+		
+
+3) Criar um repositório GIT;
+
+	Entra na pasta que você deseja criar o repositorio
+	git init
+
+	Para sincronizar com repositorio remoto
+		git remote add origin https://github.com/<usuario github>/<nome do repositorio>.git
+
+4) Clonar um repositório GIT;
+	git clone <url do repositorio>
+
+5) Adicionar arquivos ao repositório;
+
+	gedit <nome do arquivo>
+
+6) Fazer um commit em um repositório GIT;
+
+	Em sistema Local
+		git add <nome do arquivo>
+		git commit
+		na tela do arquivo de texto, na primeira linha insira a mensagem de commit e depois salve e saia.
+	
+	Para sistema remoto
+		git push
+			--Caso seja a primeira vez
+			git push -u origin master
+		
+
+7) Fazer um "push";
+	git push
+
+8) Criar uma branch;
+	git branch
+	git branch <nome da branch>
+
+9) "Trocar" (switch) entre diferentes branches;
+	git checkout <nome da Branch>
+
+10) Fazer um merge entre branches;
+	Entra na branch que você quer unir
+	git merge <nome da outra Branch que você quer unit>
+
+11) Fazer um merge entre uma branch qualquer e a branch master;
+	entra na branch master
+	git merge <nome da branch que você quer unir>
+
+12) Fazer um "pull" da master para seu repositório;
+	entrar no repositorio
+	git pull
+
+13) "Voltar" (rollback) uma versão de um repositório;
+	git log --para procurar o identificador do commit
+	git revert <identificador do commit>
+
+14) Adicionar diferentes membros de uma equipe em um repositório;
+	
+	
